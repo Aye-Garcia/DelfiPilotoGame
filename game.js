@@ -5,6 +5,7 @@ let stage, loader, flappy, jumpListener, pipeCreator; //donde se agregan los ele
 let started;
 let polygon;
 
+
 function init() {
     stage = new createjs.Stage("gameCanvas");
 
@@ -169,16 +170,22 @@ function createClouds() {
     for (let i = 0; i < points.length; i++) {
     let objects = stage.getObjectsUnderPoint(points[i].x, points[i].y);
     if (objects.filter((object) => object.name == "pipe").length > 0) {
+        const sound = new Howl({
+            src: ['sounds/explotion.mp3'],
+            volume: 0.1,
+          });
+          sound.play()
       gameOver();
       return;
     }
     }}
+
     
     function startGame() {
         started = true;
         createPipes();
         pipeCreator = setInterval(createPipes, 6000);
-
+        
     }
 
     function gameOver() {

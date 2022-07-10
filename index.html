@@ -8,6 +8,15 @@
     <base href=".">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script src="http://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"></script>
+<script>
+    const sound = new Howl({
+      src: ['sounds/motor.mp3'],
+      volume: 0.05,
+        loop: true,
+    });
+    sound.play()
+</script>
     <script src="game.js"></script>
 </head>
 <body onload="init()">
