@@ -15,7 +15,7 @@ function init() {
     //el ticker es el que se encarga de actualizar el juego
 
     let background = new createjs.Shape();
-    background.graphics.beginLinearGradientFill(["#2573BB", "#6CB8DA", "#567A32"], [0, 0.85, 1], 0, 0, 0, 480).drawRect(0, 0, 320, 480);
+    background.graphics.beginLinearGradientFill(["#2573BB", "#6CB8DA", "#00BB2D"], [0, 0.85, 1], 0, 0, 0, 480).drawRect(0, 0, 320, 480);
     background.x = 0;
     background.y = 0;
     background.name = "background";
@@ -84,7 +84,7 @@ function createClouds() {
         if (!started) {
             startGame();
         }
-        createjs.Tween.get(flappy, { override: true }).to({ y: flappy.y - 60, rotation: -20 }, 500, createjs.Ease.getPowOut(2)).to({ y: stage.canvas.height + (flappy.image.width / 2), rotation: 60 }, 1500, createjs.Ease.getPowIn(2)).call(gameOver);
+        createjs.Tween.get(flappy, { override: true }).to({ y: flappy.y - 50, rotation: -20 }, 500, createjs.Ease.getPowOut(2)).to({ y: stage.canvas.height + (flappy.image.width / 2), rotation: 60 }, 1500, createjs.Ease.getPowIn(2)).call(gameOver);
     }
 
     function createPipes() {
